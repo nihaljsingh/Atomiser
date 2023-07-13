@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <input style="width: 100px; height: 100px; text-align: center; background-color: greenyellow;" type="text"
+        id="demo" onmouseover="mouseOver()" onmouseout="mouseOut()">
+
+    <script>
+
+        let counter = 0;
+        let timeout;
+        let timer_on = 0;
+
+        function timedCount() {
+            document.getElementById("demo").value = counter;
+            counter++;
+            timeout = setTimeout(timedCount, 1000);
+        }
+
+        // if page loads = https://stackoverflow.com/questions/3842614/how-do-i-call-a-javascript-function-on-page-load
+        window.onload = function () {
+            if (!timer_on) {
+                timer_on = 1;
+                timedCount();
+            }
+        };
+
+        // if mouse goes over input box
+        function mouseOver() {
+            document.getElementById("demo").style.backgroundColor = "red";
+            clearTimeout(timeout);
+            timer_on = 0;
+        }
+
+        // if mouse leaves input box
+        function mouseOut() {
+            document.getElementById("demo").style.backgroundColor = "greenyellow";
+            if (!timer_on) {
+                timer_on = 1;
+                timedCount();
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

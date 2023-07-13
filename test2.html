@@ -8,13 +8,6 @@
             box-sizing: border-box;
         }
 
-        .column1 {
-            float: left;
-            width: 20%;
-            padding: 10px;
-            height: 100vh;
-        }
-
         .column2 {
             float: left;
             width: 50%;
@@ -22,30 +15,8 @@
             height: 100vh;
             display: grid;
             place-items: center;
-            height: 600px;
+            height: 500px;
             background-color: transparent;
-        }
-
-        .column3 {
-            float: left;
-            width: 20%;
-            /* padding: 10px; */
-            height: 100vh;
-        }
-
-        .row:after {
-            content: "";
-            display: table;
-            clear: both;
-        }
-
-        @font-face {
-            font-family: spazielSerifRound;
-            src: url(/font/SpazielSerifRound.ttf);
-        }
-
-        * {
-            font-family: spazielSerifRound;
         }
 
         .strobeSlideshow {
@@ -62,10 +33,6 @@
 
     <div class="row">
 
-        <div class="column1">
-            <img src="/image/logo/V.1.png" style="width:50%">
-        </div>
-
         <div id="column2" class="column2" onmouseover="mouseOver()" onmouseout="mouseOut()">
             <img class="strobeSlideshow" src="/image/strobeSlideshow/0001.webp">
             <img class="strobeSlideshow" src="/image/strobeSlideshow/0002.webp">
@@ -77,14 +44,6 @@
             <img class="strobeSlideshow" src="/image/strobeSlideshow/0008.webp">
             <img class="strobeSlideshow" src="/image/strobeSlideshow/0009.webp">
             <img class="strobeSlideshow" src="/image/strobeSlideshow/0010.webp">
-        </div>
-
-        <div class="column3" style="line-height: 10px;">
-            <h1 style="text-align: left; font-size: 60px;">Atomiser</h1>
-            <p style="text-align: right;">Works</p>
-            <p style="text-align: right;">References</p>
-            <p style="text-align: right;">Events</p>
-            <p style="text-align: right;">Info</p>
         </div>
 
     </div>
@@ -113,13 +72,13 @@
         }
 
         function mouseOver() {
-            document.getElementById("column2").style.backgroundColor = "transparent";
-            speed = 2000;
+            document.getElementById("column2").style.backgroundColor = "red";
+            speed = 1000;
         }
 
         function mouseOut() {
             document.getElementById("column2").style.backgroundColor = "transparent";
-            speed = 50;
+            speed = 10;
         }
 
     </script>
