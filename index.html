@@ -67,16 +67,16 @@
         </div>
 
         <div id="column2" class="column2" onmouseover="mouseOver()" onmouseout="mouseOut()">
-            <img class="strobeSlideshow" src="/image/strobeSlideshow/0001.webp">
-            <img class="strobeSlideshow" src="/image/strobeSlideshow/0002.webp">
-            <img class="strobeSlideshow" src="/image/strobeSlideshow/0003.webp">
-            <img class="strobeSlideshow" src="/image/strobeSlideshow/0004.webp">
-            <img class="strobeSlideshow" src="/image/strobeSlideshow/0005.webp">
-            <img class="strobeSlideshow" src="/image/strobeSlideshow/0006.webp">
-            <img class="strobeSlideshow" src="/image/strobeSlideshow/0007.webp">
-            <img class="strobeSlideshow" src="/image/strobeSlideshow/0008.webp">
-            <img class="strobeSlideshow" src="/image/strobeSlideshow/0009.webp">
-            <img class="strobeSlideshow" src="/image/strobeSlideshow/0010.webp">
+            <img id="strobeSlideshow" class="strobeSlideshow" src="/image/strobeSlideshow/0001.webp">
+            <img id="strobeSlideshow"  class="strobeSlideshow" src="/image/strobeSlideshow/0002.webp">
+            <img id="strobeSlideshow"  class="strobeSlideshow" src="/image/strobeSlideshow/0003.webp">
+            <img id="strobeSlideshow"  class="strobeSlideshow" src="/image/strobeSlideshow/0004.webp">
+            <img id="strobeSlideshow"  class="strobeSlideshow" src="/image/strobeSlideshow/0005.webp">
+            <img id="strobeSlideshow"  class="strobeSlideshow" src="/image/strobeSlideshow/0006.webp">
+            <img id="strobeSlideshow"  class="strobeSlideshow" src="/image/strobeSlideshow/0007.webp">
+            <img id="strobeSlideshow"  class="strobeSlideshow" src="/image/strobeSlideshow/0008.webp">
+            <img id="strobeSlideshow"  class="strobeSlideshow" src="/image/strobeSlideshow/0009.webp">
+            <img id="strobeSlideshow"  class="strobeSlideshow" src="/image/strobeSlideshow/0010.webp">
         </div>
 
         <div class="column3" style="line-height: 10px;">
@@ -113,12 +113,12 @@
         }
 
         function mouseOver() {
-            document.getElementById("column2").style.backgroundColor = "transparent";
+            document.getElementById("strobeSlideshow").style.backgroundColor = "red";
             speed = 2000;
         }
 
         function mouseOut() {
-            document.getElementById("column2").style.backgroundColor = "transparent";
+            document.getElementById("strobeSlideshow").style.backgroundColor = "transparent";
             speed = 50;
         }
 

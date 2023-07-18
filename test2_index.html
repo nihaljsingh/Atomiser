@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/png" href="/image/logo/V.1.png" />
+
+    <title>
+        Atomiser
+    </title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        @font-face {
+            font-family: spazielSerifRound;
+            src: url(/font/SpazielSerifRound.ttf);
+        }
+
+        * {
+            font-family: spazielSerifRound;
+        }
+
+        .column1 {
+            float: left;
+            width: 20%;
+            padding: 10px;
+            height: 100vh;
+
+            /* background-color: blue; */
+        }
+
+        .logo {
+            max-width: 100%;
+        }
+
+        .column2 {
+            float: left;
+            width: 50%;
+            padding: 10px;
+            height: 100vh;
+
+            /* centre image */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            /* background-color: rgb(197, 89, 89); */
+        }
+
+        .strobeSlideshow {
+            display: none;
+            max-width: 100%;
+            max-height: 65vh;
+            display: none;
+        }
+
+        .column3 {
+            float: left;
+            width: 22.5%;
+            padding: 10px;
+            height: 100vh;
+
+            /* background-color: aqua; */
+        }
+
+        .title {
+            text-align: left;
+            font-size: 5vw;
+            line-height: 10px;
+        }
+
+        .titleMenu {
+            text-align: right;
+            font-size: 2vw;
+            line-height: 10px
+        }
+
+        /* .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        } */
+
+        /* window 800px and under */
+        @media screen and (max-width: 800px) {
+
+            .column1 {
+                width: 100%;
+                max-height: 20vh;
+
+                /* centre image */
+                float: left;
+                display: grid;
+                place-items: center;
+            }
+
+            .logo {
+                max-height: 18vh;
+            }
+
+            .column2 {
+                width: 100%;
+                max-height: 40vh;
+            }
+
+            .strobeSlideshow {
+                max-width: 100%;
+                max-height: 100%;
+            }
+
+            .column3 {
+                width: 100%;
+                max-height: 40vh;
+
+                /* centre image */
+                float: left;
+                display: grid;
+                place-items: center;
+            }
+
+            .title {
+                text-align: center;
+                font-size: 16vw;
+                line-height: 10px;
+            }
+
+            .titleMenu {
+                text-align: center;
+                font-size: 1.5vh;
+                line-height: 10px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="row">
+
+        <div class="column1">
+            <img class="logo" src="/image/logo/V.1.png">
+        </div>
+
+        <div id="column2" class="column2" onmouseover="mouseOver()" onmouseout="mouseOut()">
+            <img id="strobeSlideshow" class="strobeSlideshow" src="/image/strobeSlideshow/0001.webp">
+            <img id="strobeSlideshow" class="strobeSlideshow" src="/image/strobeSlideshow/0002.webp">
+            <img id="strobeSlideshow" class="strobeSlideshow" src="/image/strobeSlideshow/0003.webp">
+            <img id="strobeSlideshow" class="strobeSlideshow" src="/image/strobeSlideshow/0004.webp">
+            <img id="strobeSlideshow" class="strobeSlideshow" src="/image/strobeSlideshow/0005.webp">
+            <img id="strobeSlideshow" class="strobeSlideshow" src="/image/strobeSlideshow/0006.webp">
+            <img id="strobeSlideshow" class="strobeSlideshow" src="/image/strobeSlideshow/0007.webp">
+            <img id="strobeSlideshow" class="strobeSlideshow" src="/image/strobeSlideshow/0008.webp">
+            <img id="strobeSlideshow" class="strobeSlideshow" src="/image/strobeSlideshow/0009.webp">
+            <img id="strobeSlideshow" class="strobeSlideshow" src="/image/strobeSlideshow/0010.webp">
+        </div>
+
+        <div class="column3">
+            <h1 class="title">Atomiser</h1>
+            <p class="titleMenu">Works</p>
+            <p class="titleMenu">References</p>
+            <p class="titleMenu">Events</p>
+            <p class="titleMenu">Info</p>
+        </div>
+
+    </div>
+
+    <script>
+
+        var speed = 10;
+
+        var myIndex = 0;
+
+        carousel();
+
+        function carousel() {
+
+            var i;
+
+            var x = document.getElementsByClassName("strobeSlideshow");
+
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+
+            myIndex++;
+
+            if (myIndex > x.length) { myIndex = 1 }
+            x[myIndex - 1].style.display = "block";
+
+            setTimeout(carousel, speed);
+
+        }
+
+        function mouseOver() {
+
+            // document.getElementById("column2").style.backgroundColor = "red";
+
+            speed = 1000;
+
+        }
+
+        function mouseOut() {
+
+            // document.getElementById("column2").style.backgroundColor = "transparent";
+
+            speed = 10;
+
+        }
+
+    </script>
+
+</body>
+
+</html>
