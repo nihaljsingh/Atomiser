@@ -14,58 +14,47 @@
     <style>
         * {
             box-sizing: border-box;
+            font-family: "Arial", Helvetica, sans-serif;
         }
 
-        @font-face {
-            font-family: spazielSerifRound;
-            src: url(/font/SpazielSerifRound.ttf);
+        .row {
+            display: flex;
+            flex-direction: row;
         }
 
-        * {
-            font-family: spazielSerifRound;
-        }
-
-        .column1 {
+        .desktop1 {
             float: left;
             width: 20%;
             padding: 10px;
             height: 100vh;
-
-            /* background-color: blue; */
         }
 
         .logo {
             max-width: 100%;
         }
 
-        .column2 {
+        .theWell {
             float: left;
             width: 50%;
             padding: 10px;
             height: 100vh;
 
-            /* centre image */
             display: flex;
             justify-content: center;
             align-items: center;
-
-            /* background-color: rgb(197, 89, 89); */
         }
 
-        .strobeSlideshow {
+        .theWellPhoto {
             display: none;
             max-width: 100%;
             max-height: 65vh;
-            display: none;
         }
 
-        .column3 {
+        .desktop3 {
             float: left;
             width: 22.5%;
             padding: 10px;
             height: 100vh;
-
-            /* background-color: aqua; */
         }
 
         .title {
@@ -74,99 +63,97 @@
             line-height: 10px;
         }
 
-        .titleMenu {
+        .menu {
             text-align: right;
             font-size: 2vw;
             line-height: 10px
         }
 
-        .column4 {
+        .mobile1 {
             display: none;
         }
 
-        .column5 {
+        .mobile3 {
             display: none;
         }
 
-        .row {
-            display: flex;
-            flex-direction: row;
-        }
 
-        /* window 800px and under */
+
+        /* when window is 800px or less */
         @media screen and (max-width: 800px) {
 
             .row {
                 flex-direction: column;
             }
 
-            .column1 {
-                width: 100%;
-                max-height: 20vh;
+            .desktop1 {
+                display: none;
+            }
 
-                /* centre image */
-                float: left;
-                display: grid;
-                place-items: center;
+            .desktop3 {
+                display: none;
+            }
+
+            .mobile1 {
+                display: flex;
+
+                justify-content: flex-end;
 
                 order: 1;
 
-                background-color: deepskyblue;
+                padding-top: 10vh;
 
-                display: none;
+                height: 25vh;
             }
 
             .logo {
-                max-height: 18vh;
-            }
-
-            .column2 {
-                width: 100%;
-                max-height: 40vh;
-
-                order: 3;
-
-                background-color: aquamarine;
-            }
-
-            .strobeSlideshow {
+                width: 28vw;
                 max-width: 100%;
                 max-height: 100%;
-            }
 
-            .column3 {
-                display: none;
+                position: absolute;
+                top: 2vh;
+                left: 3vw;
             }
 
             .title {
-                text-align: center;
-                font-size: 16vw;
-                line-height: 10px;
+                font-size: 17vw;
             }
 
-            .titleMenu {
-                text-align: center;
-                font-size: 1.5vh;
-                line-height: 10px;
+            .theWell {
+                width: 100%;
+                height: 35vh;
+
+                order: 3;
             }
 
-            .column4 {
-                display: block;
+            .theWellPhoto {
+                max-width: 100%;
+                max-height: 100%;
 
-                order: 1;
-
-                background-color: antiquewhite;
             }
 
-            .column5 {
-                max-height: 20vh;
+            .mobile3 {
+                /* max-height: 20vh; */
+
+                height: 33.33vh;
 
                 display: block;
 
                 order: 3;
 
-                background-color: antiquewhite;
+                /* background-color: antiquewhite; */
             }
+
+            .menu {
+                text-align: left;
+                font-size: 10vw;
+                line-height: 15px;
+
+                padding-left: 8vw;
+            }
+
+
         }
     </style>
 
@@ -176,51 +163,50 @@
 
     <div class="row">
 
-        <div class="column1">
+        <div class="desktop1">
             <img class="logo" src="/image/logo/V.1.png">
         </div>
 
-        <div id="column2" class="column2">
-            <img id="strobeSlideshow" class="strobeSlideshow" onmouseover="mouseOver()" onmouseout="mouseOut()"
-                src="/image/strobeSlideshow/0001.webp">
-            <img id="strobeSlideshow" class="strobeSlideshow" onmouseover="mouseOver()" onmouseout="mouseOut()"
-                src="/image/strobeSlideshow/0002.webp">
-            <img id="strobeSlideshow" class="strobeSlideshow" onmouseover="mouseOver()" onmouseout="mouseOut()"
-                src="/image/strobeSlideshow/0003.webp">
-            <img id="strobeSlideshow" class="strobeSlideshow" onmouseover="mouseOver()" onmouseout="mouseOut()"
-                src="/image/strobeSlideshow/0004.webp">
-            <img id="strobeSlideshow" class="strobeSlideshow" onmouseover="mouseOver()" onmouseout="mouseOut()"
-                src="/image/strobeSlideshow/0005.webp">
-            <img id="strobeSlideshow" class="strobeSlideshow" onmouseover="mouseOver()" onmouseout="mouseOut()"
-                src="/image/strobeSlideshow/0006.webp">
-            <img id="strobeSlideshow" class="strobeSlideshow" onmouseover="mouseOver()" onmouseout="mouseOut()"
-                src="/image/strobeSlideshow/0007.webp">
-            <img id="strobeSlideshow" class="strobeSlideshow" onmouseover="mouseOver()" onmouseout="mouseOut()"
-                src="/image/strobeSlideshow/0008.webp">
-            <img id="strobeSlideshow" class="strobeSlideshow" onmouseover="mouseOver()" onmouseout="mouseOut()"
-                src="/image/strobeSlideshow/0009.webp">
-            <img id="strobeSlideshow" class="strobeSlideshow" onmouseover="mouseOver()" onmouseout="mouseOut()"
-                src="/image/strobeSlideshow/0010.webp">
+        <div id="theWell" class="theWell">
+            <img id="theWellPhoto" class="theWellPhoto" onmouseover="mouseOver()" onmouseout="mouseOut()"
+                ontouchstart="ontouchstart()" ontouchend="ontouchend()" src="/image/strobeSlideshow/0001.webp">
+            <img id="theWellPhoto" class="theWellPhoto" onmouseover="mouseOver()" onmouseout="mouseOut()"
+                ontouchstart="ontouchstart()" ontouchend="ontouchend()" src="/image/strobeSlideshow/0002.webp">
+            <img id="theWellPhoto" class="theWellPhoto" onmouseover="mouseOver()" onmouseout="mouseOut()"
+                ontouchstart="ontouchstart()" ontouchend="ontouchend()" src="/image/strobeSlideshow/0003.webp">
+            <img id="theWellPhoto" class="theWellPhoto" onmouseover="mouseOver()" onmouseout="mouseOut()"
+                ontouchstart="ontouchstart()" ontouchend="ontouchend()" src="/image/strobeSlideshow/0004.webp">
+            <img id="theWellPhoto" class="theWellPhoto" onmouseover="mouseOver()" onmouseout="mouseOut()"
+                ontouchstart="ontouchstart()" ontouchend="ontouchend()" src="/image/strobeSlideshow/0005.webp">
+            <img id="theWellPhoto" class="theWellPhoto" onmouseover="mouseOver()" onmouseout="mouseOut()"
+                ontouchstart="ontouchstart()" ontouchend="ontouchend()" src="/image/strobeSlideshow/0006.webp">
+            <img id="theWellPhoto" class="theWellPhoto" onmouseover="mouseOver()" onmouseout="mouseOut()"
+                ontouchstart="ontouchstart()" ontouchend="ontouchend()" src="/image/strobeSlideshow/0007.webp">
+            <img id="theWellPhoto" class="theWellPhoto" onmouseover="mouseOver()" onmouseout="mouseOut()"
+                ontouchstart="ontouchstart()" ontouchend="ontouchend()" src="/image/strobeSlideshow/0008.webp">
+            <img id="theWellPhoto" class="theWellPhoto" onmouseover="mouseOver()" onmouseout="mouseOut()"
+                ontouchstart="ontouchstart()" ontouchend="ontouchend()" src="/image/strobeSlideshow/0009.webp">
+            <img id="theWellPhoto" class="theWellPhoto" onmouseover="mouseOver()" onmouseout="mouseOut()"
+                ontouchstart="ontouchstart()" ontouchend="ontouchend()" src="/image/strobeSlideshow/0010.webp">
         </div>
 
-        <div class="column3">
-            <h1 class="title">Atomiser</h1>
-            <p class="titleMenu">Works</p>
-            <p class="titleMenu">References</p>
-            <p class="titleMenu">Events</p>
-            <p class="titleMenu">Info</p>
+        <div class="desktop3">
+            <p class="title">Atomiser</p>
+            <p class="menu">Works</p>
+            <p class="menu">References</p>
+            <p class="menu">Events</p>
+            <p class="menu">Info</p>
         </div>
 
-        <div class="column4">
+        <div class="mobile1">
             <img class="logo" src="/image/logo/V.1.png">
             <h1 class="title">Atomiser</h1>
         </div>
 
-        <div class="column5">
-            <p class="titleMenu">Works</p>
-            <p class="titleMenu">References</p>
-            <p class="titleMenu">Events</p>
-            <p class="titleMenu">Info</p>
+        <div class="mobile3">
+            <p class="menu">Works</p>
+            <p class="menu">Events</p>
+            <p class="menu">Info</p>
         </div>
 
     </div>
@@ -237,7 +223,7 @@
 
             var i;
 
-            var x = document.getElementsByClassName("strobeSlideshow");
+            var x = document.getElementsByClassName("theWellPhoto");
 
             for (i = 0; i < x.length; i++) {
                 x[i].style.display = "none";
@@ -253,19 +239,19 @@
         }
 
         function mouseOver() {
-
-            // document.getElementById("column2").style.backgroundColor = "red";
-
             speed = 1000;
-
         }
 
         function mouseOut() {
-
-            // document.getElementById("column2").style.backgroundColor = "transparent";
-
             speed = 10;
+        }
 
+        function ontouchstart() {
+            speed = 1000;
+        }
+
+        function ontouchstart() {
+            speed = 10;
         }
 
     </script>
